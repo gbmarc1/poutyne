@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>poutyne &mdash; Poutyne 0.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Poutyne 0.5 documentation" href="index.html"/>
+        <link rel="next" title="poutyne.framework" href="framework.html"/>
+        <link rel="prev" title="Here is Poutyne" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Poutyne
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Package Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">poutyne</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#utils">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="framework.html">poutyne.framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callbacks.html">poutyne.framework.callbacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layers.html">poutyne.layers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Poutyne</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>poutyne</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-poutyne">
+<span id="poutyne"></span><h1>poutyne<a class="headerlink" href="#module-poutyne" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="utils">
+<h2>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
+<p>These utils functions only support the following basic Python types: tuple,
+list and dict.</p>
+<dl class="function">
+<dt id="poutyne.torch_to_numpy">
+<code class="descclassname">poutyne.</code><code class="descname">torch_to_numpy</code><span class="sig-paren">(</span><em>obj</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/utils.html#torch_to_numpy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.torch_to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert to Numpy arrays all tensors inside a Python object composed of the
+supported types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>obj</strong> – The Python object to convert.</li>
+<li><strong>copy</strong> (<em>bool</em>) – Whether to copy the memory. By default, if a tensor is
+already on CPU, the Numpy array will be a view of the tensor.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new Python object with the same structure as <cite>obj</cite> but where the
+tensors are now Numpy arrays. Not supported type are left as reference
+in the new object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">poutyne</span> <span class="kn">import</span> <span class="n">torch_to_numpy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch_to_numpy</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="s1">&#39;second&#39;</span><span class="p">:[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])],</span>
+<span class="gp">... </span>    <span class="s1">&#39;third&#39;</span><span class="p">:</span> <span class="mi">34</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="go">{</span>
+<span class="go">    &#39;first&#39;: array([1, 2, 3]),</span>
+<span class="go">    &#39;second&#39;: [array([4, 5, 6]), array([7, 8, 9])],</span>
+<span class="go">    &#39;third&#39;: 34</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>See:</dt>
+<dd><cite>poutyne.torch_apply</cite> for supported types.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="poutyne.numpy_to_torch">
+<code class="descclassname">poutyne.</code><code class="descname">numpy_to_torch</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/utils.html#numpy_to_torch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.numpy_to_torch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert to tensors all Numpy arrays inside a Python object composed of the
+supported types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> – The Python object to convert.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A new Python object with the same structure as <cite>obj</cite> but where the
+Numpy arrays are now tensors. Not supported type are left as reference
+in the new object.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">poutyne</span> <span class="kn">import</span> <span class="n">numpy_to_torch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numpy_to_torch</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="s1">&#39;second&#39;</span><span class="p">:[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])],</span>
+<span class="gp">... </span>    <span class="s1">&#39;third&#39;</span><span class="p">:</span> <span class="mi">34</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="go">{</span>
+<span class="go">    &#39;first&#39;: tensor([1, 2, 3]),</span>
+<span class="go">    &#39;second&#39;: [tensor([4, 5, 6]), tensor([7, 8, 9])],</span>
+<span class="go">    &#39;third&#39;: 34</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="poutyne.torch_apply">
+<code class="descclassname">poutyne.</code><code class="descname">torch_apply</code><span class="sig-paren">(</span><em>obj</em>, <em>func</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/utils.html#torch_apply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.torch_apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a function to all tensors inside a Python object composed of the
+supported types.</p>
+<p>Supported types are: list, tuple and dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>obj</strong> – The Python object to convert.</li>
+<li><strong>func</strong> – The function to apply.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A new Python object with the same structure as <cite>obj</cite> but where the
+tensors have been applied the function <cite>func</cite>. Not supported type are
+left as reference in the new object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="framework.html" class="btn btn-neutral float-right" title="poutyne.framework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Here is Poutyne" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Frédérik Paradis.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
