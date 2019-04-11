@@ -17,42 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Poutyne 0.5 documentation" href="index.html"/>
-        <link rel="next" title="poutyne.layers" href="layers.html"/>
-        <link rel="prev" title="poutyne.framework" href="framework.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="poutyne.layers" href="layers.html" />
+    <link rel="prev" title="poutyne.framework" href="framework.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -118,7 +112,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Poutyne</a>
@@ -126,9 +120,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -187,73 +182,72 @@ are provided with.</p>
 <dd><dl class="attribute">
 <dt id="poutyne.framework.callbacks.Callback.params">
 <code class="descname">params</code><a class="headerlink" href="#poutyne.framework.callbacks.Callback.params" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>dict</em> – Contains a key ‘epoch’ and a key ‘steps_per_epoch’
+<dd><p>Contains a key ‘epoch’ and a key ‘steps_per_epoch’
 which are passed to the <cite>fit</cite> function in <cite>Model</cite>. It may
 contain other keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="poutyne.framework.callbacks.Callback.model">
 <code class="descname">model</code><a class="headerlink" href="#poutyne.framework.callbacks.Callback.model" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>Model</em> – a reference to the <cite>Model</cite> object which is using the
+<dd><p>a reference to the <cite>Model</cite> object which is using the
 callback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="framework.html#poutyne.framework.Model" title="poutyne.framework.Model">Model</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="poutyne.framework.callbacks.Callback.on_backward_end">
 <code class="descname">on_backward_end</code><span class="sig-paren">(</span><em>batch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/callbacks.html#Callback.on_backward_end"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.Callback.on_backward_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is called after the backpropagation but before the optimization step.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>batch</strong> (<em>int</em>) – The batch number.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch</strong> (<em>int</em>) – The batch number.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="poutyne.framework.callbacks.Callback.on_batch_begin">
 <code class="descname">on_batch_begin</code><span class="sig-paren">(</span><em>batch</em>, <em>logs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/callbacks.html#Callback.on_batch_begin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.Callback.on_batch_begin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is called before the begining of each batch.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>batch</strong> (<em>int</em>) – The batch number.</li>
-<li><strong>logs</strong> (<em>dict</em>) – Usually an empty dict.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch</strong> (<em>int</em>) – The batch number.</p></li>
+<li><p><strong>logs</strong> (<em>dict</em>) – Usually an empty dict.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="poutyne.framework.callbacks.Callback.on_batch_end">
 <code class="descname">on_batch_end</code><span class="sig-paren">(</span><em>batch</em>, <em>logs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/callbacks.html#Callback.on_batch_end"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.Callback.on_batch_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is called before the end of each batch.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>batch</strong> (<em>int</em>) – The batch number.</li>
-<li><strong>logs</strong> (<em>dict</em>) – <p>Contains the following keys:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch</strong> (<em>int</em>) – The batch number.</p></li>
+<li><p><strong>logs</strong> (<em>dict</em>) – <p>Contains the following keys:</p>
 <ul>
-<li>’batch’: The batch number.</li>
-<li>’loss’: The loss of the batch.</li>
-<li>’time’: The computation time of the batch.</li>
-<li>Other metrics: One key for each type of metrics.</li>
+<li><p>’batch’: The batch number.</p></li>
+<li><p>’loss’: The loss of the batch.</p></li>
+<li><p>’time’: The computation time of the batch.</p></li>
+<li><p>Other metrics: One key for each type of metrics.</p></li>
 </ul>
-</li>
+</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;batch&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mf">0.10012837</span><span class="p">,</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="mf">4.34462</span><span class="p">,</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="mf">0.766</span><span class="p">}</span>
 </pre></div>
@@ -264,48 +258,40 @@ callback.</p>
 <dt id="poutyne.framework.callbacks.Callback.on_epoch_begin">
 <code class="descname">on_epoch_begin</code><span class="sig-paren">(</span><em>epoch</em>, <em>logs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/callbacks.html#Callback.on_epoch_begin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.Callback.on_epoch_begin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is called before the begining of each epoch.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>epoch</strong> (<em>int</em>) – The epoch number.</li>
-<li><strong>logs</strong> (<em>dict</em>) – Usually an empty dict.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epoch</strong> (<em>int</em>) – The epoch number.</p></li>
+<li><p><strong>logs</strong> (<em>dict</em>) – Usually an empty dict.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="poutyne.framework.callbacks.Callback.on_epoch_end">
 <code class="descname">on_epoch_end</code><span class="sig-paren">(</span><em>epoch</em>, <em>logs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/callbacks.html#Callback.on_epoch_end"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.Callback.on_epoch_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is called before the end of each epoch.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>epoch</strong> (<em>int</em>) – The epoch number.</li>
-<li><strong>logs</strong> (<em>dict</em>) – <p>Contains the following keys:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epoch</strong> (<em>int</em>) – The epoch number.</p></li>
+<li><p><strong>logs</strong> (<em>dict</em>) – <p>Contains the following keys:</p>
 <ul>
-<li>’epoch’: The epoch number.</li>
-<li>’loss’: The average loss of the batches.</li>
-<li>’time’: The computation time of the epoch.</li>
-<li>Other metrics: One key for each type of metrics. The metrics
-are also averaged.</li>
-<li>val_loss’: The average loss of the batches on the validation
-set.</li>
-<li>Other metrics: One key for each type of metrics on the
-validation set. The metrics are also averaged.</li>
+<li><p>’epoch’: The epoch number.</p></li>
+<li><p>’loss’: The average loss of the batches.</p></li>
+<li><p>’time’: The computation time of the epoch.</p></li>
+<li><p>Other metrics: One key for each type of metrics. The metrics
+are also averaged.</p></li>
+<li><p>val_loss’: The average loss of the batches on the validation
+set.</p></li>
+<li><p>Other metrics: One key for each type of metrics on the
+validation set. The metrics are also averaged.</p></li>
 </ul>
-</li>
+</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;epoch&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mf">3.141519837</span><span class="p">,</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="mf">4.34462</span><span class="p">,</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="mf">0.766</span><span class="p">,</span>
         <span class="s1">&#39;val_loss&#39;</span><span class="p">:</span> <span class="mf">5.2352</span><span class="p">,</span> <span class="s1">&#39;val_accuracy&#39;</span><span class="p">:</span> <span class="mf">0.682</span><span class="p">}</span>
@@ -317,28 +303,22 @@ validation set. The metrics are also averaged.</li>
 <dt id="poutyne.framework.callbacks.Callback.on_train_begin">
 <code class="descname">on_train_begin</code><span class="sig-paren">(</span><em>logs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/callbacks.html#Callback.on_train_begin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.Callback.on_train_begin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is called before the begining of the training.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>logs</strong> (<em>dict</em>) – Usually an empty dict.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>logs</strong> (<em>dict</em>) – Usually an empty dict.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="poutyne.framework.callbacks.Callback.on_train_end">
 <code class="descname">on_train_end</code><span class="sig-paren">(</span><em>logs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/callbacks.html#Callback.on_train_end"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.Callback.on_train_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is called before the end of the training.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>logs</strong> (<em>dict</em>) – Usually an empty dict.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>logs</strong> (<em>dict</em>) – Usually an empty dict.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -357,23 +337,19 @@ validation set. The metrics are also averaged.</li>
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">BestModelRestore</code><span class="sig-paren">(</span><em>*</em>, <em>monitor='val_loss'</em>, <em>mode='min'</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/best_model_restore.html#BestModelRestore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.BestModelRestore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore the weights of the best model at the end of the training depending
 on a monitored quantity.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>monitor</strong> (<em>string</em>) – Quantity to monitor. (Default value = ‘val_loss’)</li>
-<li><strong>mode</strong> (<em>string</em>) – One of {min, max}.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>monitor</strong> (<em>string</em>) – Quantity to monitor. (Default value = ‘val_loss’)</p></li>
+<li><p><strong>mode</strong> (<em>string</em>) – One of {min, max}.
 Whether the monitored has to be maximized or minimized. For
 instance, for <cite>val_accuracy</cite>, this should be <cite>max</cite>, and for
-<cite>val_loss</cite>, this should be <cite>min</cite>, etc. (Default value = ‘min’)</li>
-<li><strong>verbose</strong> (<em>bool</em>) – Whether to display a message when the model has improved
-or when restoring the best model. (Default value = False)</li>
+<cite>val_loss</cite>, this should be <cite>min</cite>, etc. (Default value = ‘min’)</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to display a message when the model has improved
+or when restoring the best model. (Default value = False)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="class">
@@ -382,28 +358,24 @@ or when restoring the best model. (Default value = False)</li>
 <dd><p>The source code of this class is under the MIT License and was copied from
 the Keras project, and has been modified.</p>
 <p>Stop training when a monitored quantity has stopped improving.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>monitor</strong> (<em>int</em>) – Quantity to be monitored.</li>
-<li><strong>min_delta</strong> (<em>float</em>) – Minimum change in the monitored quantity to qualify
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>monitor</strong> (<em>int</em>) – Quantity to be monitored.</p></li>
+<li><p><strong>min_delta</strong> (<em>float</em>) – Minimum change in the monitored quantity to qualify
 as an improvement, i.e. an absolute change of less than min_delta,
-will count as no improvement. (Default value = 0)</li>
-<li><strong>patience</strong> (<em>int</em>) – Number of epochs with no improvement after which
-training will be stopped. (Default value = 0)</li>
-<li><strong>verbose</strong> (<em>bool</em>) – Whether to print when early stopping is done.
-(Default value = False)</li>
-<li><strong>mode</strong> (<em>string</em>) – One of {min, max}. In <cite>min</cite> mode, training will stop when
+will count as no improvement. (Default value = 0)</p></li>
+<li><p><strong>patience</strong> (<em>int</em>) – Number of epochs with no improvement after which
+training will be stopped. (Default value = 0)</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print when early stopping is done.
+(Default value = False)</p></li>
+<li><p><strong>mode</strong> (<em>string</em>) – One of {min, max}. In <cite>min</cite> mode, training will stop when
 the quantity monitored has stopped decreasing; in <cite>max</cite> mode it will
 stop when the quantity monitored has stopped increasing.
-(Default value = ‘min’)</li>
+(Default value = ‘min’)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="class">
@@ -412,24 +384,20 @@ stop when the quantity monitored has stopped increasing.
 <dd><p>Delays one or many callbacks for a certain number of epochs or number of
 batches. If both <code class="docutils literal notranslate"><span class="pre">epoch_delay</span></code> and <code class="docutils literal notranslate"><span class="pre">batch_delay</span></code> are provided, the
 longer one has precedence.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>callbacks</strong> (<a class="reference internal" href="#poutyne.framework.callbacks.Callback" title="poutyne.framework.callbacks.Callback"><em>Callback</em></a><em>, </em><em>list of Callback</em>) – A callback or a list of
-callbacks to delay.</li>
-<li><strong>epoch_delay</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of epochs to delay.</li>
-<li><strong>batch_delay</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of batches to delay. The number of
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callbacks</strong> (<a class="reference internal" href="#poutyne.framework.callbacks.Callback" title="poutyne.framework.callbacks.Callback"><em>Callback</em></a><em>, </em><em>list of Callback</em>) – A callback or a list of
+callbacks to delay.</p></li>
+<li><p><strong>epoch_delay</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of epochs to delay.</p></li>
+<li><p><strong>batch_delay</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of batches to delay. The number of
 batches can span many epochs. When the batch delay expires (i.e.
 there are more than <cite>batch_delay</cite> done), the <code class="docutils literal notranslate"><span class="pre">on_epoch_begin</span></code>
 method is called on the callback(s) before the <code class="docutils literal notranslate"><span class="pre">on_batch_begin</span></code>
-method.</li>
+method.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="class">
@@ -437,9 +405,9 @@ method.</li>
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">ClipNorm</code><span class="sig-paren">(</span><em>parameters</em>, <em>max_norm</em>, <em>*</em>, <em>norm_type=2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/clip_grad.html#ClipNorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.ClipNorm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses PyTorch <a class="reference external" href="http://pytorch.org/docs/stable/nn.html#torch.nn.utils.clip_grad_norm_">torch.nn.utils.clip_grad_norm_</a>
 method to clip gradient.</p>
-<dl class="docutils">
-<dt>See:</dt>
-<dd><a class="reference external" href="http://pytorch.org/docs/stable/nn.html#torch.nn.utils.clip_grad_norm_">torch.nn.utils.clip_grad_norm_</a></dd>
+<dl class="simple">
+<dt>See:</dt><dd><p><a class="reference external" href="http://pytorch.org/docs/stable/nn.html#torch.nn.utils.clip_grad_norm_">torch.nn.utils.clip_grad_norm_</a></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -448,9 +416,9 @@ method to clip gradient.</p>
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">ClipValue</code><span class="sig-paren">(</span><em>parameters</em>, <em>clip_value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/clip_grad.html#ClipValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.ClipValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses PyTorch <a class="reference external" href="http://pytorch.org/docs/stable/nn.html#torch.nn.utils.clip_grad_value_">torch.nn.utils.clip_grad_value_</a>
 method to clip gradient.</p>
-<dl class="docutils">
-<dt>See:</dt>
-<dd><a class="reference external" href="http://pytorch.org/docs/stable/nn.html#torch.nn.utils.clip_grad_value_">torch.nn.utils.clip_grad_value_</a></dd>
+<dl class="simple">
+<dt>See:</dt><dd><p><a class="reference external" href="http://pytorch.org/docs/stable/nn.html#torch.nn.utils.clip_grad_value_">torch.nn.utils.clip_grad_value_</a></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -461,36 +429,29 @@ method to clip gradient.</p>
 <dt id="poutyne.framework.callbacks.CSVLogger">
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">CSVLogger</code><span class="sig-paren">(</span><em>filename</em>, <em>*</em>, <em>batch_granularity=False</em>, <em>separator='</em>, <em>'</em>, <em>append=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/logger.html#CSVLogger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.CSVLogger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Callback that output the result of each epoch or batch into a CSV file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>filename</strong> (<em>string</em>) – The filename of the CSV.</li>
-<li><strong>batch_granularity</strong> (<em>bool</em>) – Whether to also output the result of each
-batch in addition to the epochs. (Default value = False)</li>
-<li><strong>separator</strong> (<em>string</em>) – The separator to use in the CSV.
-(Default value = ‘,’)</li>
-<li><strong>append</strong> (<em>bool</em>) – Whether to append to an existing file.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>string</em>) – The filename of the CSV.</p></li>
+<li><p><strong>batch_granularity</strong> (<em>bool</em>) – Whether to also output the result of each
+batch in addition to the epochs. (Default value = False)</p></li>
+<li><p><strong>separator</strong> (<em>string</em>) – The separator to use in the CSV.
+(Default value = ‘,’)</p></li>
+<li><p><strong>append</strong> (<em>bool</em>) – Whether to append to an existing file.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="class">
 <dt id="poutyne.framework.callbacks.TensorBoardLogger">
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">TensorBoardLogger</code><span class="sig-paren">(</span><em>writer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/logger.html#TensorBoardLogger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.TensorBoardLogger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Callback that output the result of each epoch or batch into a Tensorboard experiment folder.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>writer</strong> (<em>tensorboardX.SummaryWriter</em>) – The tensorboard writer.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>writer</strong> (<em>tensorboardX.SummaryWriter</em>) – The tensorboard writer.</p>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <p>Using tensorboardX:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorboardX</span> <span class="k">import</span> <span class="n">SummaryWriter</span>
@@ -532,38 +493,34 @@ using the system’s <cite>tmp</cite> directory and then is moved a the final de
 after the checkpoint is made. Sometimes, this move is not possible on some
 system. To address this problem, it is possible to specify the destination
 of the temporary file using the <code class="docutils literal notranslate"><span class="pre">temporary_filename</span></code> argument.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>filename</strong> (<em>string</em>) – Path to save the model file.</li>
-<li><strong>monitor</strong> (<em>string</em>) – Quantity to monitor. (Default value = ‘val_loss’)</li>
-<li><strong>verbose</strong> (<em>bool</em>) – Whether to display a message when saving and restoring
-a checkpoint. (Default value = False)</li>
-<li><strong>save_best_only</strong> (<em>bool</em>) – If <cite>save_best_only</cite> is true, the latest best
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>string</em>) – Path to save the model file.</p></li>
+<li><p><strong>monitor</strong> (<em>string</em>) – Quantity to monitor. (Default value = ‘val_loss’)</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to display a message when saving and restoring
+a checkpoint. (Default value = False)</p></li>
+<li><p><strong>save_best_only</strong> (<em>bool</em>) – If <cite>save_best_only</cite> is true, the latest best
 model according to the quantity monitored will not be overwritten.
-(Default value = False)</li>
-<li><strong>mode</strong> (<em>string</em>) – One of {min, max}.
+(Default value = False)</p></li>
+<li><p><strong>mode</strong> (<em>string</em>) – One of {min, max}.
 If <cite>save_best_only</cite> is true, the decision to overwrite the current
 save file is made based on either the maximization or the
 minimization of the monitored quantity. For <cite>val_accuracy</cite>, this
 should be <cite>max</cite>, for <cite>val_loss</cite> this should be <cite>min</cite>, etc.
-(Default value = ‘min’)</li>
-<li><strong>period</strong> (<em>int</em>) – Interval (number of epochs) between checkpoints.
-(Default value = 1)</li>
-<li><strong>temporary_filename</strong> (<em>string</em><em>, </em><em>optional</em>) – Temporary filename for the
+(Default value = ‘min’)</p></li>
+<li><p><strong>period</strong> (<em>int</em>) – Interval (number of epochs) between checkpoints.
+(Default value = 1)</p></li>
+<li><p><strong>temporary_filename</strong> (<em>string</em><em>, </em><em>optional</em>) – Temporary filename for the
 checkpoint so that the last checkpoint can be written
-atomically. See the <code class="docutils literal notranslate"><span class="pre">atomic_write</span></code> argument.</li>
-<li><strong>atomic_write</strong> (<em>bool</em>) – Whether to right atomically the checkpoint. See
-the description above for details. (Default value = True)</li>
-<li><strong>open_mode</strong> (<em>str</em>) – <code class="docutils literal notranslate"><span class="pre">mode</span></code> option passed to <code class="docutils literal notranslate"><span class="pre">open()</span></code>.
-(Default value = ‘wb’)</li>
+atomically. See the <code class="docutils literal notranslate"><span class="pre">atomic_write</span></code> argument.</p></li>
+<li><p><strong>atomic_write</strong> (<em>bool</em>) – Whether to right atomically the checkpoint. See
+the description above for details. (Default value = True)</p></li>
+<li><p><strong>open_mode</strong> (<em>str</em>) – <code class="docutils literal notranslate"><span class="pre">mode</span></code> option passed to <code class="docutils literal notranslate"><span class="pre">open()</span></code>.
+(Default value = ‘wb’)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="class">
@@ -571,20 +528,17 @@ the description above for details. (Default value = True)</li>
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">ModelCheckpoint</code><span class="sig-paren">(</span><em>*args</em>, <em>restore_best=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/checkpoint.html#ModelCheckpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.ModelCheckpoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the model after every epoch. See
 <cite>poutyne.framework.PeriodicSaveCallback</cite> for the arguments’ descriptions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>restore_best</strong> (<em>bool</em>) – If <cite>restore_best</cite> is true, the weights of the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>restore_best</strong> (<em>bool</em>) – If <cite>restore_best</cite> is true, the weights of the
 network will be reset to the last best checkpoint done. This option
 only works when <cite>save_best_only</cite> is also true.
-(Default value = False)</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>See:</dt>
-<dd>poutyne.framework.PeriodicSaveCallback</dd>
+(Default value = False)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>See:</dt><dd><p>poutyne.framework.PeriodicSaveCallback</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -599,9 +553,9 @@ reloaded as follows.</p>
 </div>
 <p>See <cite>poutyne.framework.PeriodicSaveCallback</cite> for the arguments’
 descriptions.</p>
-<dl class="docutils">
-<dt>See:</dt>
-<dd>poutyne.framework.PeriodicSaveCallback</dd>
+<dl class="simple">
+<dt>See:</dt><dd><p>poutyne.framework.PeriodicSaveCallback</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -618,17 +572,14 @@ follows.</p>
 </div>
 <p>See <cite>poutyne.framework.PeriodicSaveCallback</cite> for the arguments’
 descriptions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lr_scheduler</strong> – An LR scheduler callback.</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>See:</dt>
-<dd>poutyne.framework.PeriodicSaveCallback</dd>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lr_scheduler</strong> – An LR scheduler callback.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>See:</dt><dd><p>poutyne.framework.PeriodicSaveCallback</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -637,18 +588,15 @@ descriptions.</p>
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">PeriodicSaveLambda</code><span class="sig-paren">(</span><em>func</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/periodic.html#PeriodicSaveLambda"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.PeriodicSaveLambda" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call a lambda with a file descriptor after every epoch. See
 <cite>poutyne.framework.PeriodicSaveCallback</cite> for the arguments’ descriptions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>func</strong> (<em>fd</em><em>, </em><em>int</em><em>, </em><em>dict -&gt; None</em>) – The lambda that will be called with a
-file descriptor, the epoch number and the epoch logs.</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>See:</dt>
-<dd>poutyne.framework.PeriodicSaveCallback</dd>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>fd</em><em>, </em><em>int</em><em>, </em><em>dict -&gt; None</em>) – The lambda that will be called with a
+file descriptor, the epoch number and the epoch logs.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>See:</dt><dd><p>poutyne.framework.PeriodicSaveCallback</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -662,62 +610,59 @@ omitted.</p>
 <dl class="class">
 <dt id="poutyne.framework.callbacks.LambdaLR">
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">LambdaLR</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/lr_scheduler.html#LambdaLR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.LambdaLR" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>See:</dt>
-<dd><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.LambdaLR">PyTorch LambdaLR</a></dd>
+<dd><dl class="simple">
+<dt>See:</dt><dd><p><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.LambdaLR">PyTorch LambdaLR</a></p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="class">
 <dt id="poutyne.framework.callbacks.StepLR">
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">StepLR</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/lr_scheduler.html#StepLR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.StepLR" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>See:</dt>
-<dd><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.StepLR">PyTorch StepLR</a></dd>
+<dd><dl class="simple">
+<dt>See:</dt><dd><p><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.StepLR">PyTorch StepLR</a></p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="class">
 <dt id="poutyne.framework.callbacks.MultiStepLR">
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">MultiStepLR</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/lr_scheduler.html#MultiStepLR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.MultiStepLR" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>See:</dt>
-<dd><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.MultiStepLR">PyTorch MultiStepLR</a></dd>
+<dd><dl class="simple">
+<dt>See:</dt><dd><p><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.MultiStepLR">PyTorch MultiStepLR</a></p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="class">
 <dt id="poutyne.framework.callbacks.ExponentialLR">
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">ExponentialLR</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/lr_scheduler.html#ExponentialLR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.ExponentialLR" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>See:</dt>
-<dd><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.ExponentialLR">PyTorch ExponentialLR</a></dd>
+<dd><dl class="simple">
+<dt>See:</dt><dd><p><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.ExponentialLR">PyTorch ExponentialLR</a></p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="class">
 <dt id="poutyne.framework.callbacks.CosineAnnealingLR">
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">CosineAnnealingLR</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/lr_scheduler.html#CosineAnnealingLR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.CosineAnnealingLR" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>See:</dt>
-<dd><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.CosineAnnealingLR">PyTorch CosineAnnealingLR</a></dd>
+<dd><dl class="simple">
+<dt>See:</dt><dd><p><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.CosineAnnealingLR">PyTorch CosineAnnealingLR</a></p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="class">
 <dt id="poutyne.framework.callbacks.ReduceLROnPlateau">
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.</code><code class="descname">ReduceLROnPlateau</code><span class="sig-paren">(</span><em>*args</em>, <em>monitor='val_loss'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/lr_scheduler.html#ReduceLROnPlateau"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.ReduceLROnPlateau" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>monitor</strong> (<em>string</em>) – The quantity to monitor. (Default value = ‘val_loss’)</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>See:</dt>
-<dd><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.ReduceLROnPlateau">PyTorch ReduceLROnPlateau</a></dd>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>monitor</strong> (<em>string</em>) – The quantity to monitor. (Default value = ‘val_loss’)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>See:</dt><dd><p><a class="reference external" href="http://pytorch.org/docs/master/optim.html#torch.optim.lr_scheduler.ReduceLROnPlateau">PyTorch ReduceLROnPlateau</a></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -739,18 +684,14 @@ steps through them, and sets the parameters of the optimizer.</p>
 <dd><p>A <code class="docutils literal notranslate"><span class="pre">Phase</span></code> defines how to configure an optimizer.</p>
 <p>For each train step it returns a dictionary that contains the configuration
 for the optimizer.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>lr</strong> – a configuration space for the learning rate (optional).</li>
-<li><strong>momentum</strong> – a configuration space for the momentum (optional).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lr</strong> – a configuration space for the learning rate (optional).</p></li>
+<li><p><strong>momentum</strong> – a configuration space for the momentum (optional).</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="class">
@@ -758,18 +699,14 @@ for the optimizer.</p>
 <em class="property">class </em><code class="descclassname">poutyne.framework.callbacks.policies.</code><code class="descname">OptimizerPolicy</code><span class="sig-paren">(</span><em>phases: List</em>, <em>*</em>, <em>initial_step: int = 0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/policies.html#OptimizerPolicy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.policies.OptimizerPolicy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combine different <code class="docutils literal notranslate"><span class="pre">Phase</span></code> instances in an <code class="docutils literal notranslate"><span class="pre">OptimizerPolicy</span></code>
 and execute the policies in a row.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>phases</strong> – A list of <code class="docutils literal notranslate"><span class="pre">Phase</span></code> instances.</li>
-<li><strong>initial_step</strong> – The step to start the policy in. Used for restarting.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phases</strong> – A list of <code class="docutils literal notranslate"><span class="pre">Phase</span></code> instances.</p></li>
+<li><p><strong>initial_step</strong> – The step to start the policy in. Used for restarting.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -777,19 +714,15 @@ and execute the policies in a row.</p>
 <code class="descclassname">poutyne.framework.callbacks.policies.</code><code class="descname">linspace</code><span class="sig-paren">(</span><em>start: float</em>, <em>end: float</em>, <em>steps: int</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/policies.html#linspace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.policies.linspace" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy linear parameter space that goes from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">end</span></code> in
 <code class="docutils literal notranslate"><span class="pre">steps</span></code> steps.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>start</strong> – the start point.</li>
-<li><strong>end</strong> – the end point.</li>
-<li><strong>steps</strong> – the number of steps between start and end.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – the start point.</p></li>
+<li><p><strong>end</strong> – the end point.</p></li>
+<li><p><strong>steps</strong> – the number of steps between start and end.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="go">[0.0, 0.5, 1.0]</span>
@@ -802,19 +735,15 @@ and execute the policies in a row.</p>
 <code class="descclassname">poutyne.framework.callbacks.policies.</code><code class="descname">cosinespace</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>steps</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/callbacks/policies.html#cosinespace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.callbacks.policies.cosinespace" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy cosine parameter space that goes from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">end</span></code> in
 <code class="docutils literal notranslate"><span class="pre">steps</span></code> steps.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>start</strong> – the start point.</li>
-<li><strong>end</strong> – the end point.</li>
-<li><strong>steps</strong> – the number of steps between start and end.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – the start point.</p></li>
+<li><p><strong>end</strong> – the end point.</p></li>
+<li><p><strong>steps</strong> – the number of steps between start and end.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">cosinespace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="go">[0.0, 0.5, 1.0]</span>
@@ -831,31 +760,27 @@ and execute the policies in a row.</p>
 <dd><p>The “one-cycle” policy as described in the paper
 “Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates”.</p>
 <p>You might want to read the paper and adjust the parameters.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>steps</strong> – the total number of steps to take.</li>
-<li><strong>lr</strong> – tuple for the triangular learning rate (start, middle).</li>
-<li><strong>momentum</strong> – tuple for the triangular momentum (start, middle).</li>
-<li><strong>finetune_lr</strong> – target learning rate for the final finetuning.
-Should be smaller than <cite>min(lr)</cite>.</li>
-<li><strong>finetune_fraction</strong> – fraction of steps used for the finetuning.
-Must be between 0 and 1.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps</strong> – the total number of steps to take.</p></li>
+<li><p><strong>lr</strong> – tuple for the triangular learning rate (start, middle).</p></li>
+<li><p><strong>momentum</strong> – tuple for the triangular momentum (start, middle).</p></li>
+<li><p><strong>finetune_lr</strong> – target learning rate for the final finetuning.
+Should be smaller than <cite>min(lr)</cite>.</p></li>
+<li><p><strong>finetune_fraction</strong> – fraction of steps used for the finetuning.
+Must be between 0 and 1.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A list of configured <code class="docutils literal notranslate"><span class="pre">Phase</span></code> instances.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of configured <code class="docutils literal notranslate"><span class="pre">Phase</span></code> instances.</p>
+</dd>
+</dl>
 <p class="rubric">References</p>
-<dl class="docutils">
-<dt>“Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates”</dt>
-<dd>Leslie N. Smith, Nicholay Topin
-<a class="reference external" href="https://arxiv.org/abs/1708.07120">https://arxiv.org/abs/1708.07120</a></dd>
+<dl class="simple">
+<dt>“Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates”</dt><dd><p>Leslie N. Smith, Nicholay Topin
+<a class="reference external" href="https://arxiv.org/abs/1708.07120">https://arxiv.org/abs/1708.07120</a></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -867,29 +792,25 @@ Must be between 0 and 1.</li>
 <p>Note the total number of steps is calculated like this:
 <cite>total_steps = sum(base_cycle_length * (cycle_mult ** i) for i in range(cycles))</cite></p>
 <p>You might want to read the paper and adjust the parameters.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>base_cycle_length</strong> – number of steps for the first cycle.</li>
-<li><strong>cycles</strong> – the number of repetitions.</li>
-<li><strong>lr</strong> – tuple for the learning rate for one cycle: (start, end).</li>
-<li><strong>cycle_mult</strong> – multiply the last cycle length with this every cycle.
-The length of a cycle grows exponentially.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_cycle_length</strong> – number of steps for the first cycle.</p></li>
+<li><p><strong>cycles</strong> – the number of repetitions.</p></li>
+<li><p><strong>lr</strong> – tuple for the learning rate for one cycle: (start, end).</p></li>
+<li><p><strong>cycle_mult</strong> – multiply the last cycle length with this every cycle.
+The length of a cycle grows exponentially.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A list of configured <code class="docutils literal notranslate"><span class="pre">Phase</span></code> instances.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of configured <code class="docutils literal notranslate"><span class="pre">Phase</span></code> instances.</p>
+</dd>
+</dl>
 <p class="rubric">References</p>
-<dl class="docutils">
-<dt>“SGDR: Stochastic Gradient Descent with Warm Restarts”</dt>
-<dd>Ilya Loshchilov, Frank Hutter
-<a class="reference external" href="https://arxiv.org/abs/1608.03983">https://arxiv.org/abs/1608.03983</a></dd>
+<dl class="simple">
+<dt>“SGDR: Stochastic Gradient Descent with Warm Restarts”</dt><dd><p>Ilya Loshchilov, Frank Hutter
+<a class="reference external" href="https://arxiv.org/abs/1608.03983">https://arxiv.org/abs/1608.03983</a></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -899,9 +820,7 @@ The length of a cycle grows exponentially.</li>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -910,7 +829,7 @@ The length of a cycle grows exponentially.</li>
         <a href="layers.html" class="btn btn-neutral float-right" title="poutyne.layers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="framework.html" class="btn btn-neutral" title="poutyne.framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="framework.html" class="btn btn-neutral float-left" title="poutyne.framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -919,11 +838,11 @@ The length of a cycle grows exponentially.</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Frédérik Paradis.
+        &copy; Copyright 2018, Frédérik Paradis
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -936,37 +855,15 @@ The length of a cycle grows exponentially.</li>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.5',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

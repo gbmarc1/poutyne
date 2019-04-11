@@ -17,42 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Poutyne 0.5 documentation" href="index.html"/>
-        <link rel="next" title="poutyne.framework.callbacks" href="callbacks.html"/>
-        <link rel="prev" title="poutyne" href="utils.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="poutyne.framework.callbacks" href="callbacks.html" />
+    <link rel="prev" title="poutyne" href="utils.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -110,7 +104,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Poutyne</a>
@@ -118,9 +112,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -172,41 +167,47 @@
 <dd><p>The Model class encapsulates a PyTorch module/network, a PyTorch optimizer,
 a loss function and metric functions. It allows the user to train a neural
 network without hand-coding the epoch/step logic.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>model</strong> (<em>torch.nn.Module</em>) – A PyTorch module.</li>
-<li><strong>optimizer</strong> (<em>torch.optim.Optimizer</em>) – Initialized PyTorch optimizer.</li>
-<li><strong>loss_function</strong> – Loss function. It can be any PyTorch loss layer or
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>torch.nn.Module</em>) – A PyTorch module.</p></li>
+<li><p><strong>optimizer</strong> (<em>torch.optim.Optimizer</em>) – Initialized PyTorch optimizer.</p></li>
+<li><p><strong>loss_function</strong> – Loss function. It can be any PyTorch loss layer or
 custom loss function. It can also be a string with the same name as
 a PyTorch loss function (either the functional or object name). The
 loss function must have the signature
 <code class="docutils literal notranslate"><span class="pre">loss_function(input,</span> <span class="pre">target)</span></code> where <code class="docutils literal notranslate"><span class="pre">input</span></code> is the prediction
-of the network and <code class="docutils literal notranslate"><span class="pre">target</span></code> is the ground truth.</li>
-<li><strong>metrics</strong> (<em>list</em>) – List of functions with the same signature as the loss
+of the network and <code class="docutils literal notranslate"><span class="pre">target</span></code> is the ground truth.</p></li>
+<li><p><strong>metrics</strong> (<em>list</em>) – List of functions with the same signature as the loss
 function. Each metric can be any PyTorch loss function. It can also
 be a string with the same name as a PyTorch loss function (either
 the functional or object name). ‘accuracy’ (or just ‘acc’) is also
 a valid metric. Each metric function is called on each batch of the
 optimization and on the validation batches at the end of the epoch.
-(Default value = [])</li>
+(Default value = [])</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="poutyne.framework.Model.model">
 <code class="descname">model</code><a class="headerlink" href="#poutyne.framework.Model.model" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>torch.nn.Module</em> – The associated PyTorch module.</p>
+<dd><p>The associated PyTorch module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>torch.nn.Module</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="poutyne.framework.Model.optimizer">
 <code class="descname">optimizer</code><a class="headerlink" href="#poutyne.framework.Model.optimizer" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>torch.optim.Optimizer</em> – The associated PyTorch optimizer.</p>
+<dd><p>The associated PyTorch optimizer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>torch.optim.Optimizer</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
@@ -218,7 +219,12 @@ optimization and on the validation batches at the end of the epoch.
 <dl class="attribute">
 <dt id="poutyne.framework.Model.metrics">
 <code class="descname">metrics</code><a class="headerlink" href="#poutyne.framework.Model.metrics" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>list</em> – The associated metric functions.</p>
+<dd><p>The associated metric functions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
 <p class="rubric">Example</p>
@@ -300,14 +306,11 @@ Epoch 3/5 0.03s Step 25/25: loss: 6.158523, acc: 2.125000, val_loss: 5.985811, v
 <code class="docutils literal notranslate"><span class="pre">torch.nn.Module.cpu()</span></code> method. Notice that the device is saved so
 that the batches can send to the right device before passing it to the
 network.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><cite>self</cite>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>self</cite>.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -317,14 +320,11 @@ network.</p>
 <code class="docutils literal notranslate"><span class="pre">torch.nn.Module.cuda()</span></code> method. Notice that the device is saved so
 that the batches can send to the right device before passing it to the
 network.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><cite>self</cite>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>self</cite>.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -332,21 +332,19 @@ network.</p>
 <code class="descname">evaluate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>*</em>, <em>batch_size=32</em>, <em>return_pred=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.evaluate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the loss and the metrics of the network on batches of samples
 and optionaly returns the predictions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Dataset.</li>
-<li><strong>y</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Dataset ground truths.</li>
-<li><strong>batch_size</strong> (<em>int</em>) – Number of samples given to the network at one
-time. (Default value = 32)</li>
-<li><strong>return_pred</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to return the predictions for
-<code class="docutils literal notranslate"><span class="pre">x</span></code>. (Default value = False)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Dataset.</p></li>
+<li><p><strong>y</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Dataset ground truths.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Number of samples given to the network at one
+time. (Default value = 32)</p></li>
+<li><p><strong>return_pred</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to return the predictions for
+<code class="docutils literal notranslate"><span class="pre">x</span></code>. (Default value = False)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>Float <code class="docutils literal notranslate"><span class="pre">loss</span></code> if no metrics were specified and <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Float <code class="docutils literal notranslate"><span class="pre">loss</span></code> if no metrics were specified and <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is
 false.</p>
 <p>Otherwise, tuple <code class="docutils literal notranslate"><span class="pre">(loss,</span> <span class="pre">metrics)</span></code> if <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is false.
 <code class="docutils literal notranslate"><span class="pre">metrics</span></code> is a Numpy array of size <code class="docutils literal notranslate"><span class="pre">n</span></code>, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the
@@ -355,10 +353,8 @@ float. If <code class="docutils literal notranslate"><span class="pre">n</span> 
 <p>Tuple <code class="docutils literal notranslate"><span class="pre">(loss,</span> <span class="pre">metrics,</span> <span class="pre">pred_y)</span></code> if <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is true where
 <code class="docutils literal notranslate"><span class="pre">pred_y</span></code> is a Numpy array of the predictions.</p>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -366,12 +362,10 @@ float. If <code class="docutils literal notranslate"><span class="pre">n</span> 
 <code class="descname">evaluate_generator</code><span class="sig-paren">(</span><em>generator</em>, <em>*</em>, <em>steps=None</em>, <em>return_pred=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.evaluate_generator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.evaluate_generator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the loss and the metrics of the network on batches of samples
 and optionaly returns the predictions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>generator</strong> – <p>Generator-like object for the dataset. The generator
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>generator</strong> – <p>Generator-like object for the dataset. The generator
 must yield a tuple <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span></code> is a batch of the
 dataset and <code class="docutils literal notranslate"><span class="pre">y</span></code> is the corresponding ground truths. <code class="docutils literal notranslate"><span class="pre">y</span></code>
 should be a Tensor or a Numpy array with the first dimension
@@ -381,16 +375,16 @@ size. If <code class="docutils literal notranslate"><span class="pre">y</span></
 is raised and the “batch size” defaults to 1.</p>
 <p>See the <code class="docutils literal notranslate"><span class="pre">fit_generator()</span></code> method for details on the types of
 generators supported.</p>
-</li>
-<li><strong>steps</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations done on
+</p></li>
+<li><p><strong>steps</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations done on
 <code class="docutils literal notranslate"><span class="pre">generator</span></code>. (Defaults the number of steps needed to see the
-entire dataset)</li>
-<li><strong>return_pred</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to return the predictions for
-<code class="docutils literal notranslate"><span class="pre">x</span></code>. (Default value = False)</li>
+entire dataset)</p></li>
+<li><p><strong>return_pred</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to return the predictions for
+<code class="docutils literal notranslate"><span class="pre">x</span></code>. (Default value = False)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>Float <code class="docutils literal notranslate"><span class="pre">loss</span></code> if no metrics were specified and <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Float <code class="docutils literal notranslate"><span class="pre">loss</span></code> if no metrics were specified and <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is
 false.</p>
 <p>Otherwise, tuple <code class="docutils literal notranslate"><span class="pre">(loss,</span> <span class="pre">metrics)</span></code> if <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is false.
 <code class="docutils literal notranslate"><span class="pre">metrics</span></code> is a Numpy array of size <code class="docutils literal notranslate"><span class="pre">n</span></code>, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the
@@ -400,10 +394,8 @@ float. If <code class="docutils literal notranslate"><span class="pre">n</span> 
 <code class="docutils literal notranslate"><span class="pre">pred_y</span></code> is the list of the predictions of each batch with tensors
 converted into Numpy arrays.</p>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <p>With no metrics:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">pytorch_module</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">loss_function</span><span class="p">,</span>
@@ -438,19 +430,17 @@ converted into Numpy arrays.</p>
 <code class="descname">evaluate_on_batch</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>*</em>, <em>return_pred=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.evaluate_on_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.evaluate_on_batch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the loss and the metrics of the network on a single batch of
 samples and optionaly returns the predictions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Batch.</li>
-<li><strong>y</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Batch ground truths.</li>
-<li><strong>return_pred</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to return the predictions for
-<code class="docutils literal notranslate"><span class="pre">x</span></code>. (Default value = False)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Batch.</p></li>
+<li><p><strong>y</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Batch ground truths.</p></li>
+<li><p><strong>return_pred</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to return the predictions for
+<code class="docutils literal notranslate"><span class="pre">x</span></code>. (Default value = False)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>Float <code class="docutils literal notranslate"><span class="pre">loss</span></code> if no metrics were specified and <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Float <code class="docutils literal notranslate"><span class="pre">loss</span></code> if no metrics were specified and <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is
 false.</p>
 <p>Otherwise, tuple <code class="docutils literal notranslate"><span class="pre">(loss,</span> <span class="pre">metrics)</span></code> if <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is false.
 <code class="docutils literal notranslate"><span class="pre">metrics</span></code> is a Numpy array of size <code class="docutils literal notranslate"><span class="pre">n</span></code>, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the
@@ -460,10 +450,8 @@ float. If <code class="docutils literal notranslate"><span class="pre">n</span> 
 <code class="docutils literal notranslate"><span class="pre">pred_y</span></code> is the predictions with tensors converted into Numpy
 arrays.</p>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -471,45 +459,41 @@ arrays.</p>
 <code class="descname">fit</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>validation_x=None</em>, <em>validation_y=None</em>, <em>*</em>, <em>batch_size=32</em>, <em>epochs=1000</em>, <em>steps_per_epoch=None</em>, <em>validation_steps=None</em>, <em>initial_epoch=1</em>, <em>verbose=True</em>, <em>callbacks=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trains the model on a dataset. This method creates generators and calls
 the <code class="docutils literal notranslate"><span class="pre">fit_generator</span></code> method.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Training dataset.</li>
-<li><strong>y</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Ground truth.</li>
-<li><strong>validation_x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Validation dataset. The validation datset
-is optional. (Default value = None)</li>
-<li><strong>validation_y</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Validation ground truth.
-(Default value = None)</li>
-<li><strong>batch_size</strong> (<em>int</em>) – Number of samples given to the network at one time.
-(Default value = 32)</li>
-<li><strong>epochs</strong> (<em>int</em>) – Number of times the entire training dataset is seen.
-(Default value = 1000)</li>
-<li><strong>steps_per_epoch</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of batch used during one
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Training dataset.</p></li>
+<li><p><strong>y</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Ground truth.</p></li>
+<li><p><strong>validation_x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Validation dataset. The validation datset
+is optional. (Default value = None)</p></li>
+<li><p><strong>validation_y</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Validation ground truth.
+(Default value = None)</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Number of samples given to the network at one time.
+(Default value = 32)</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – Number of times the entire training dataset is seen.
+(Default value = 1000)</p></li>
+<li><p><strong>steps_per_epoch</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of batch used during one
 epoch. Obviously, using this argument may cause one epoch not to
 see the entire training dataset or see it multiple times.
 (Defaults the number of steps needed to see the entire
-training dataset)</li>
-<li><strong>validation_steps</strong> (<em>int</em><em>, </em><em>optional</em>) – Same as for <code class="docutils literal notranslate"><span class="pre">steps_per_epoch</span></code> but
+training dataset)</p></li>
+<li><p><strong>validation_steps</strong> (<em>int</em><em>, </em><em>optional</em>) – Same as for <code class="docutils literal notranslate"><span class="pre">steps_per_epoch</span></code> but
 for the validation dataset. (Defaults to <code class="docutils literal notranslate"><span class="pre">steps_per_epoch</span></code> if
 provided or the number of steps needed to see the entire
-validation dataset)</li>
-<li><strong>initial_epoch</strong> (<em>int</em><em>, </em><em>optional</em>) – Epoch at which to start training
+validation dataset)</p></li>
+<li><p><strong>initial_epoch</strong> (<em>int</em><em>, </em><em>optional</em>) – Epoch at which to start training
 (useful for resuming a previous training run).
-(Default value = 1)</li>
-<li><strong>verbose</strong> (<em>bool</em>) – Whether to display the progress of the training.
-(Default value = True)</li>
-<li><strong>callbacks</strong> (<em>list of poutyne.framework.Callback</em>) – List of callbacks
-that will be called during training. (Default value = [])</li>
+(Default value = 1)</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to display the progress of the training.
+(Default value = True)</p></li>
+<li><p><strong>callbacks</strong> (<em>list of poutyne.framework.Callback</em>) – List of callbacks
+that will be called during training. (Default value = [])</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">List of dict containing the history of each epoch.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of dict containing the history of each epoch.</p>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">pytorch_module</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">loss_function</span><span class="p">)</span>
 <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span>
@@ -533,12 +517,10 @@ that will be called during training. (Default value = [])</li>
 <dt id="poutyne.framework.Model.fit_generator">
 <code class="descname">fit_generator</code><span class="sig-paren">(</span><em>train_generator</em>, <em>valid_generator=None</em>, <em>*</em>, <em>epochs=1000</em>, <em>steps_per_epoch=None</em>, <em>validation_steps=None</em>, <em>initial_epoch=1</em>, <em>verbose=True</em>, <em>callbacks=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.fit_generator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.fit_generator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trains the model on a dataset using a generator.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>train_generator</strong> – <p>Generator-like object for the training dataset.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_generator</strong> – <p>Generator-like object for the training dataset.
 The generator must yield a tuple <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span></code> is a
 batch of the training dataset and <code class="docutils literal notranslate"><span class="pre">y</span></code> is the corresponding
 ground truths. <code class="docutils literal notranslate"><span class="pre">y</span></code> should be a Tensor or a Numpy array with
@@ -557,41 +539,39 @@ called and the method <code class="docutils literal notranslate"><span class="pr
 resulting object returned by <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code>. Notice that a call
 to <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> on a generator made using the python keyword
 <code class="docutils literal notranslate"><span class="pre">yield</span></code> returns the generator itself.</p>
-</li>
-<li><strong>valid_generator</strong> (<em>optional</em>) – Generator-like object for the
+</p></li>
+<li><p><strong>valid_generator</strong> (<em>optional</em>) – Generator-like object for the
 validation dataset. This generator is optional. The generator is
 used the same way as the  generator <code class="docutils literal notranslate"><span class="pre">train_generator</span></code>. If the
 generator does not have a method <code class="docutils literal notranslate"><span class="pre">__len__()</span></code>, either the
 <code class="docutils literal notranslate"><span class="pre">validation_steps</span></code> or the <code class="docutils literal notranslate"><span class="pre">steps_per_epoch</span></code> argument must be
 provided or the iterator returned raises a StopIteration
 exception at the end of the validation dataset.
-(Default value = None)</li>
-<li><strong>epochs</strong> (<em>int</em>) – Number of times the entire training dataset is seen.
-(Default value = 1000)</li>
-<li><strong>steps_per_epoch</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of batch used during one
+(Default value = None)</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – Number of times the entire training dataset is seen.
+(Default value = 1000)</p></li>
+<li><p><strong>steps_per_epoch</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of batch used during one
 epoch. Obviously, using this argument may cause one epoch not to
 see the entire training dataset or see it multiple times.
 (Defaults the number of steps needed to see the entire
-training dataset)</li>
-<li><strong>validation_steps</strong> (<em>int</em><em>, </em><em>optional</em>) – Same as for <code class="docutils literal notranslate"><span class="pre">steps_per_epoch</span></code>
+training dataset)</p></li>
+<li><p><strong>validation_steps</strong> (<em>int</em><em>, </em><em>optional</em>) – Same as for <code class="docutils literal notranslate"><span class="pre">steps_per_epoch</span></code>
 but for the validation dataset. (Defaults to <code class="docutils literal notranslate"><span class="pre">steps_per_epoch</span></code>
 if provided or the number of steps needed to see the entire
-validation dataset)</li>
-<li><strong>initial_epoch</strong> (<em>int</em><em>, </em><em>optional</em>) – Epoch at which to start training
+validation dataset)</p></li>
+<li><p><strong>initial_epoch</strong> (<em>int</em><em>, </em><em>optional</em>) – Epoch at which to start training
 (useful for resuming a previous training run).
-(Default value = 1)</li>
-<li><strong>verbose</strong> (<em>bool</em>) – Whether to display the progress of the training.
-(Default value = True)</li>
-<li><strong>callbacks</strong> (<em>list of poutyne.framework.Callback</em>) – List of callbacks
-that will be called during training. (Default value = [])</li>
+(Default value = 1)</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to display the progress of the training.
+(Default value = True)</p></li>
+<li><p><strong>callbacks</strong> (<em>list of poutyne.framework.Callback</em>) – List of callbacks
+that will be called during training. (Default value = [])</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">List of dict containing the history of each epoch.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of dict containing the history of each epoch.</p>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">pytorch_module</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">loss_function</span><span class="p">)</span>
 <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_generator</span><span class="p">(</span><span class="n">train_generator</span><span class="p">,</span>
@@ -628,15 +608,12 @@ weights, see the <code class="docutils literal notranslate"><span class="pre">ge
 <code class="descname">load_optimizer_state</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.load_optimizer_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.load_optimizer_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the optimizer state saved using the <code class="docutils literal notranslate"><span class="pre">torch.save()</span></code> method or the
 <code class="docutils literal notranslate"><span class="pre">save_optimizer_state()</span></code> method of this class.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>f</strong> – File-like object (has to implement fileno that returns a file
-descriptor) or string containing a file name.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> – File-like object (has to implement fileno that returns a file
+descriptor) or string containing a file name.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -647,15 +624,12 @@ descriptor) or string containing a file name.</td>
 the weights are not transfered to the device from which they were saved
 from. In other words, the PyTorch module will stay on the same device it
 already is on.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>f</strong> – File-like object (has to implement fileno that returns a file
-descriptor) or string containing a file name.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> – File-like object (has to implement fileno that returns a file
+descriptor) or string containing a file name.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -663,22 +637,18 @@ descriptor) or string containing a file name.</td>
 <code class="descname">predict</code><span class="sig-paren">(</span><em>x</em>, <em>*</em>, <em>batch_size=32</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the predictions of the network given a dataset <code class="docutils literal notranslate"><span class="pre">x</span></code>, where the
 tensors are converted into Numpy arrays.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Dataset for which to predict.</li>
-<li><strong>batch_size</strong> (<em>int</em>) – Number of samples given to the network at one
-time. (Default value = 32)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Dataset for which to predict.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Number of samples given to the network at one
+time. (Default value = 32)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Numpy arrays of the predictions.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Numpy arrays of the predictions.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -686,23 +656,20 @@ time. (Default value = 32)</li>
 <code class="descname">predict_generator</code><span class="sig-paren">(</span><em>generator</em>, <em>*</em>, <em>steps=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.predict_generator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.predict_generator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the predictions of the network given batches of samples <code class="docutils literal notranslate"><span class="pre">x</span></code>,
 where the tensors are converted into Numpy arrays.</p>
-<dl class="docutils">
-<dt>generator: Generator-like object for the dataset. The generator must</dt>
-<dd>yield a batch of samples. See the <code class="docutils literal notranslate"><span class="pre">fit_generator()</span></code> method for
-details on the types of generators supported.</dd>
-<dt>steps (int, optional): Number of iterations done on</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">generator</span></code>. (Defaults the number of steps needed to see the
-entire dataset)</dd>
+<dl class="simple">
+<dt>generator: Generator-like object for the dataset. The generator must</dt><dd><p>yield a batch of samples. See the <code class="docutils literal notranslate"><span class="pre">fit_generator()</span></code> method for
+details on the types of generators supported.</p>
+</dd>
+<dt>steps (int, optional): Number of iterations done on</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generator</span></code>. (Defaults the number of steps needed to see the
+entire dataset)</p>
+</dd>
 </dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of the predictions of each batch with tensors converted into
-Numpy arrays.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of the predictions of each batch with tensors converted into
+Numpy arrays.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -710,61 +677,50 @@ Numpy arrays.</td>
 <code class="descname">predict_on_batch</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.predict_on_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.predict_on_batch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the predictions of the network given a batch <code class="docutils literal notranslate"><span class="pre">x</span></code>, where the
 tensors are converted into Numpy arrays.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Batch for which to predict.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The predictions with tensors converted into Numpy arrays.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>Union</em><em>[</em><em>Tensor</em><em>, </em><em>np.ndarray</em><em>]</em>) – Batch for which to predict.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The predictions with tensors converted into Numpy arrays.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="poutyne.framework.Model.save_optimizer_state">
 <code class="descname">save_optimizer_state</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.save_optimizer_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.save_optimizer_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the state of the current optimizer.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>f</strong> – File-like object (has to implement fileno that returns a file
-descriptor) or string containing a file name.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> – File-like object (has to implement fileno that returns a file
+descriptor) or string containing a file name.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="poutyne.framework.Model.save_weights">
 <code class="descname">save_weights</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.save_weights"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.save_weights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the weights of the current network.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>f</strong> – File-like object (has to implement fileno that returns a file
-descriptor) or string containing a file name.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> – File-like object (has to implement fileno that returns a file
+descriptor) or string containing a file name.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="poutyne.framework.Model.set_weights">
 <code class="descname">set_weights</code><span class="sig-paren">(</span><em>weights</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.set_weights"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.set_weights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modifies the weights of the network with the given weights.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>weights</strong> (<em>dict</em>) – Weights returned by either <code class="docutils literal notranslate"><span class="pre">get_weights()</span></code> or
-<code class="docutils literal notranslate"><span class="pre">get_weight_copies()</span></code>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>weights</strong> (<em>dict</em>) – Weights returned by either <code class="docutils literal notranslate"><span class="pre">get_weights()</span></code> or
+<code class="docutils literal notranslate"><span class="pre">get_weight_copies()</span></code>.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -773,16 +729,14 @@ descriptor) or string containing a file name.</td>
 <dd><p>Tranfers the network on the specified device. The device is saved so
 that the batches can send to the right device before passing it to the
 network.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device</strong> (<em>torch.device</em>) – The device to which the network is sent.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><cite>self</cite>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>device</strong> (<em>torch.device</em>) – The device to which the network is sent.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>self</cite>.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -790,19 +744,17 @@ network.</p>
 <code class="descname">train_on_batch</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>*</em>, <em>return_pred=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/poutyne/framework/model.html#Model.train_on_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#poutyne.framework.Model.train_on_batch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Trains the model for the batch <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> and computes the loss and
 the metrics, and optionaly returns the predictions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> – Batch.</li>
-<li><strong>y</strong> – Batch ground truths.</li>
-<li><strong>return_pred</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to return the predictions for
-<code class="docutils literal notranslate"><span class="pre">x</span></code>. (Default value = False)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Batch.</p></li>
+<li><p><strong>y</strong> – Batch ground truths.</p></li>
+<li><p><strong>return_pred</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to return the predictions for
+<code class="docutils literal notranslate"><span class="pre">x</span></code>. (Default value = False)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>Float <code class="docutils literal notranslate"><span class="pre">loss</span></code> if no metrics were specified and <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Float <code class="docutils literal notranslate"><span class="pre">loss</span></code> if no metrics were specified and <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is
 false.</p>
 <p>Otherwise, tuple <code class="docutils literal notranslate"><span class="pre">(loss,</span> <span class="pre">metrics)</span></code> if <code class="docutils literal notranslate"><span class="pre">return_pred</span></code> is false.
 <code class="docutils literal notranslate"><span class="pre">metrics</span></code> is a Numpy array of size <code class="docutils literal notranslate"><span class="pre">n</span></code>, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the
@@ -812,10 +764,8 @@ float. If <code class="docutils literal notranslate"><span class="pre">n</span> 
 <code class="docutils literal notranslate"><span class="pre">pred_y</span></code> is the predictions with tensors converted into Numpy
 arrays.</p>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -825,9 +775,7 @@ arrays.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -836,7 +784,7 @@ arrays.</p>
         <a href="callbacks.html" class="btn btn-neutral float-right" title="poutyne.framework.callbacks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="utils.html" class="btn btn-neutral" title="poutyne" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="utils.html" class="btn btn-neutral float-left" title="poutyne" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -845,11 +793,11 @@ arrays.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Frédérik Paradis.
+        &copy; Copyright 2018, Frédérik Paradis
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -862,37 +810,15 @@ arrays.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.5',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
